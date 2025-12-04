@@ -46,7 +46,11 @@ const CaseList: React.FC<CaseListProps> = ({ cases, onSelectCase }) => {
           <div className="p-8 text-center text-slate-500">No cases found.</div>
         ) : (
           sortedCases.map((patientCase) => (
-            <CaseItem patientCase={patientCase} onSelectCase={onSelectCase} />
+            <CaseItem
+              key={patientCase.id}
+              patientCase={patientCase}
+              onSelectCase={onSelectCase}
+            />
           ))
         )}
       </div>

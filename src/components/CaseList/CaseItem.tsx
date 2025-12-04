@@ -10,7 +10,6 @@ interface CaseItemProps {
 const CaseItem = ({ patientCase, onSelectCase }: CaseItemProps) => {
   return (
     <div
-      key={patientCase.id}
       onClick={() => onSelectCase(patientCase.id)}
       className="group relative flex items-center p-4 hover:bg-slate-100 cursor-pointer transition-colors duration-150 ease-in-out"
       role="button"
