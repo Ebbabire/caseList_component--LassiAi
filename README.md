@@ -52,20 +52,18 @@ src/
 - **Separation of Concerns**: The `CaseList` is a pure presentational component. It doesn't fetch data; it receives `cases` as props. This makes it easy to plug into any backend (GraphQL, REST, Firebase).
 - **Mock Data Strategy**: Data is separated into `mockCases.ts` to simulate real API responses during development.
 
-### 3. Recent Updates & Changelog
+### 3. Features
 
-#### **Feature: Date Sorting (v1.1)**
+- Basic list layout with card-style rows.
+- Hover states and click handlers.
+- Responsive hiding of secondary columns on mobile devices.
 
-We implemented client-side sorting to improve usability for veterinarians who need to prioritize recent cases or review older history.
+#### **Feature: Date Sorting**
+
+I implemented client-side sorting to improve usability for veterinarians who need to prioritize recent cases or review older history.
 
 - **Why**: Clinical lists often grow long. Users need to toggle between "Newest First" (urgent triage) and "Oldest First" (clearing backlog).
 - **Implementation**:
   - Added local state `sortOrder` ('asc' | 'desc').
   - Used `useMemo` to cache the sorted array. This prevents expensive re-sorting operations on every render unless the `cases` prop or `sortOrder` changes.
   - Added a sleek header bar with a toggle button that rotates an icon to indicate direction, maintaining the minimal aesthetic.
-
-#### **Feature: Initial Release (v1.0)**
-
-- Basic list layout with card-style rows.
-- Hover states and click handlers.
-- Responsive hiding of secondary columns on mobile devices.
