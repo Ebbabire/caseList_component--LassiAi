@@ -5,13 +5,18 @@ import { ChevronRightIcon } from "lucide-react";
 interface CaseItemProps {
   patientCase: Case;
   onSelectCase: (id: string) => void;
+  isSelected?: boolean;
 }
 
-const CaseItem = ({ patientCase, onSelectCase }: CaseItemProps) => {
+const CaseItem = ({ patientCase, onSelectCase, isSelected }: CaseItemProps) => {
   return (
     <div
       onClick={() => onSelectCase(patientCase.id)}
-      className="group relative flex items-center p-4 hover:bg-slate-100 cursor-pointer transition-colors duration-150 ease-in-out"
+      className={`group relative flex items-center p-4 hover:bg-slate-100 cursor-pointer transition-colors duration-150 ease-in-out border-l-4 ${
+        isSelected
+          ? "bg-blue-50/60 border-blue-500"
+          : "bg-white border-transparent hover:bg-slate-50 hover:border-slate-300"
+      }`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

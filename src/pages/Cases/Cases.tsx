@@ -4,7 +4,7 @@ import { mockCases } from "@/components/CaseList/mockCases";
 import CaseList from "@/components/CaseList/CaseList";
 import { FileBraces } from "lucide-react";
 
-const Cases: React.FC = () => {
+const Cases = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const handleSelectCase = (id: string) => {
